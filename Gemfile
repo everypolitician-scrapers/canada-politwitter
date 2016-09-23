@@ -14,3 +14,5 @@ gem "nokogiri"
 gem "open-uri-cached"
 gem "fuzzy_match"
 gem 'wikidata-client', '~> 0.0.7', require: 'wikidata'
+gem "twitter"
+gem 'twitter_list', git: "https://github.com/everypolitician/twitter_list"
