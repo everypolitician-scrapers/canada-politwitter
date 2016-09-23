@@ -3,6 +3,7 @@
 require 'scraperwiki'
 require 'nokogiri'
 require 'open-uri'
+require './twitter_scraper'
 
 require 'pry'
 require 'open-uri/cached'
@@ -59,7 +60,10 @@ def youtube_list(url)
   end
 end
 
-twitter = twitter_list('http://politwitter.ca/page/canadian-politics-twitters/mp/house')
+twitter = twitter_list('http://politwitter.ca/page/canadian-politics-twitters/mp/house') +
+          TwitterListScraper.new(user: 'politwoops', list: 'ca').to_a +
+          TwitterListScraper.new(user: 'cka_politwit', list: 'federal-mps').to_a
+
 facebook = facebook_list('http://politwitter.ca/directory/facebook/mp/house')
 youtube = youtube_list('http://politwitter.ca/directory/youtube/mp/house')
 
