@@ -27,7 +27,7 @@ def twitter_list(url)
     data = {
       id: td[0].css('a/@href').text.split('/').last,
       name: td[1].text.tidy,
-      twitter: td[0].text.tidy,
+      twitter: td[0].text.sub('@','').tidy,
       area: td[5].text,
       source: URI.join(url, td[0].css('a/@href').text).to_s,
     }
