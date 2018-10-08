@@ -81,4 +81,5 @@ youtube.each do |h|
   end
 end
 
+ScraperWiki.sqliteexecute('DROP TABLE data') rescue nil
 ScraperWiki.save_sqlite([:id], data.values.flatten)
